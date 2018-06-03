@@ -53,19 +53,22 @@ int main(void)
     // Enter an infinite loop, just incrementing a counter
     while(1)
     {
-        i++ ;
+
+
+        Chip_GPIO_SetPinState(LPC_GPIO, 0, 26, 1);
+        Chip_GPIO_SetPinState(LPC_GPIO, 2,  0, 1);
+        Chip_GPIO_SetPinState(LPC_GPIO, 2,  1, 1);
+
+        for(j=0; j<1000; j++)
+        for(i=0; i<10000; i++);
+
 
         Chip_GPIO_SetPinState(LPC_GPIO, 0, 26, 0);
         Chip_GPIO_SetPinState(LPC_GPIO, 2,  0, 0);
         Chip_GPIO_SetPinState(LPC_GPIO, 2,  1, 0);
 
-        for(j=0; j<10000; j++);
-
-        Chip_GPIO_SetPinState(LPC_GPIO, 0, 26, 0);
-        Chip_GPIO_SetPinState(LPC_GPIO, 2,  0, 0);
-        Chip_GPIO_SetPinState(LPC_GPIO, 2,  1, 0);
-
-        for(j=0; j<10000; j++);
+        for(j=0; j<1000; j++)
+        for(i=0; i<10000; i++);
     }
     return 0 ;
 }
