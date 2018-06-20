@@ -36,11 +36,11 @@ int main(void)
     Board_LED_Set(0, true);
 #endif
 #endif
-
+    //configurar los puertos como salida
     Chip_GPIO_SetPinDIR(LPC_GPIO, 0, 26, 1);
     Chip_GPIO_SetPinDIR(LPC_GPIO, 2,  0, 1);
     Chip_GPIO_SetPinDIR(LPC_GPIO, 2,  1, 1);
-
+    //pongo el led RGB apagado
     Chip_GPIO_SetPinState(LPC_GPIO, 0, 26, 0);
     Chip_GPIO_SetPinState(LPC_GPIO, 2,  0, 0);
     Chip_GPIO_SetPinState(LPC_GPIO, 2,  1, 0);
